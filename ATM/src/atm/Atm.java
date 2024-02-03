@@ -46,13 +46,14 @@ class Sbi implements Bank {
 		if (p == b.getPin()) {
 			if (b.getBalance() >= n) {
 				b.setBalance(b.getBalance() - n);
+				System.out.println("Amount "+n+"Debited Successfully \nNew Account Balance is : "+b.getBalance());
 			}
 			else {
 				System.out.println("--------------------------------------");
 				System.out.println("Insufficient Balance");
 				System.out.println("--------------------------------------");
 			}
-			System.out.println(b.getBalance());
+			
 			System.out.println("--------------------------------------");
 		}
 
@@ -65,7 +66,7 @@ class Sbi implements Bank {
 			if (b.getBalance() >= n) {
 				b.setBalance(b.getBalance() + n);
 			}
-			System.out.println(b.getBalance());
+			System.out.println("Amount "+n+" Credited Successfully\nNew Account Balance is : "+b.getBalance());
 			System.out.println("--------------------------------------");
 		}
 
@@ -99,7 +100,7 @@ public class Atm implements Bank {
 	}
 
 	public void showbalance() {
-		System.out.println(a.getBalance());
+		System.out.println("Your Account Balance is : "+a.getBalance());
 		System.out.println("--------------------------------------");
 
 	}
@@ -107,7 +108,7 @@ public class Atm implements Bank {
 	public void debit(int n) {
 		if (n <= a.getBalance()) {
 			a.setBalance(a.getBalance() - n);
-			System.out.println(a.getBalance());
+			System.out.println("Amount "+n+" Debited Successfully \nNew Account Balance is : "+a.getBalance());
 			System.out.println("--------------------------------------");
 		} else {
 			System.out.println("--------------------------------------");
@@ -119,7 +120,7 @@ public class Atm implements Bank {
 
 	public void credit(int n) {
 		a.setBalance(a.getBalance() + n);
-		System.out.println(a.getBalance());
+		System.out.println("Amount "+n+" Credited Successfully\n New Account Balance is : "+a.getBalance());
 		System.out.println("--------------------------------------");
 
 	}
